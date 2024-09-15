@@ -1,0 +1,46 @@
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+.welcome-message {
+    flex: 1;
+    text-align: center;
+}
+
+.welcome-message h1 {
+    font-size: 5rem;
+    color: #008000;
+    font-family: 'Nerko One', cursive;
+    text-decoration: underline;
+}
+
+.circle-logo-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
+
+.half-circle {
+    width: 300px;
+    height: 634px;
+    margin-left: 550px;
+    background-color: #008000;
+    border-top-left-radius: 300px;
+    border-bottom-left-radius:300px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 400px;
+    height: auto;
+    position: absolute;
+    right: -50px;
+}

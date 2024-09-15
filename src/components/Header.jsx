@@ -24,9 +24,6 @@ const Header = () => {
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action5">Personalizar Orden</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link href="#" disabled className="nav-link-custom">
-                            Link
-                        </Nav.Link>
                     </Nav>
                     <Form className="form-custom d-flex">
                         <Form.Control
