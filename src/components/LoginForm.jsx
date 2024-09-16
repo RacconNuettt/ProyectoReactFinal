@@ -73,7 +73,7 @@ const LoginForm = () => {
                     </div>
                 </form>
                 <p className="text-right">
-                    No tienes cuenta? <Link to="/Register">Regístrate</Link>
+                    No tienes cuenta? <Link to="/">Regístrate</Link>
                 </p>
             </div>
             <ToastContainer />

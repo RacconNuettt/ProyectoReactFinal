@@ -122,7 +122,7 @@ const RegisterForm = () => {
                     </div>
                 </form>
                 <p className="text-right">
-                    Ya tienes una cuenta? <Link to="/">Inicia Sesión</Link>
+                    Ya tienes una cuenta? <Link to="/Login">Inicia Sesión</Link>
                 </p>
             </div>
             <ToastContainer />

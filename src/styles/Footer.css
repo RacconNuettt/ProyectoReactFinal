@@ -1,6 +1,9 @@
 .footer {
     background-color: #333;
     color: #fff;
+    font-size: 1.4rem;
+    color: #008000;
+    font-family: 'Nerko One', cursive;
 }
 
 .footer-icon-col {
