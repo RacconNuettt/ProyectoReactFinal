@@ -1,41 +1,52 @@
-import {Navbar,Nav,Button,Container,Form,NavDropdown,Carousel,Offcanvas,Card,} from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from 'react';
+import Carousel from 'react-bootstrap/Carousel';
+import img1 from "../assets/casado.jpeg"
+import img2 from "../assets/Chifrijo.jpeg"
+import img3 from "../assets/pinto.jpeg"
+import '../styles/carrusel.css'
+
 
 function Carrusel() {
+    const [index, setIndex] = useState(0);
+
+    const handleSelect = (selectedIndex) => {
+        setIndex(selectedIndex);
+    };
+
     return (
-        <div>
-            {" "}
-            <Carousel
-                activeIndex={index}
-                onSelect={handleSelect}
-                className="custom_carousel"
-            >
-                <Carousel.Item>
-                    <ExampleCarouselImage text="First slide" />
-                    <Carousel.Caption>
-                        <h3>Olla inoxidable</h3>
-                        <p>esta olla a un precio razonable</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <ExampleCarouselImage Botas="Second slide" />
-                    <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <ExampleCarouselImage text="Third slide" />
-                    <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl
-                            consectetur.
-                        </p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-            </Carousel>
-        </div>
+        <Carousel
+            activeIndex={index}
+            onSelect={handleSelect}
+            className="custom_carousel"
+        >
+            <Carousel.Item>
+                <img className="d-block w-100" src={img1} alt="Mitad" />
+                <Carousel.Caption>
+                    <h3>Casados</h3>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src={img2}
+                    alt="Queque de Fresa"
+                />
+                <Carousel.Caption>
+                    <h3>Chifrijo</h3>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src={img3}
+                    alt="Queque de Navidad"
+                />
+                <Carousel.Caption>
+                    <h3>Gallo Pinto</h3>
+                </Carousel.Caption>
+            </Carousel.Item>
+        </Carousel>
+
     );
 }
 

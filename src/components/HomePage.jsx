@@ -1,5 +1,6 @@
 import '../styles/HomePage.css'; 
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.png';
+import tamal from '../assets/tamal.png'; 
 
 const HomePage = () => {
   return (
@@ -12,9 +13,8 @@ const HomePage = () => {
           <img src={logo} alt="El Alamo Logo" className="logo" />
         </div>
       </div>
-      
+      <img src={tamal} alt="Hojas de Plátano" className="hojas-platanos" />
     </div>
-    
   );
 }
 

@@ -14,7 +14,7 @@ const Header = () => {
                     >
                         <Nav.Link href="/home" className="nav-link-custom">Inicio</Nav.Link>
                         <Nav.Link href="/AboutUs" className="nav-link-custom">Quienes Somos</Nav.Link>
-                        <Nav.Link href="/Contact" className="nav-link-custom">Contactenos</Nav.Link>
+                        <Nav.Link href="/Contacto" className="nav-link-custom">Contactenos</Nav.Link>
                         <NavDropdown title="Menu" id="navbarScrollingDropdown" className="nav-dropdown-custom">
                             <NavDropdown.Item href="#action3">Desayunos</NavDropdown.Item>
                             <NavDropdown.Item href="#action4">Almuerzos</NavDropdown.Item>

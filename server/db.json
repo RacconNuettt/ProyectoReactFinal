@@ -11,6 +11,24 @@
       "nombre": "Adrian Zuniga Morales",
       "email": "adrian@gmail.com",
       "password": "12345678"
+    },
+    {
+      "id": "1e73",
+      "nombre": "Jeffry Medina",
+      "email": "jeffrey@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "064f",
+      "nombre": "Alejandro Carmona",
+      "email": "alejandro@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "d312",
+      "nombre": "Pipe Baltolano",
+      "email": "pipe@gmail.com",
+      "password": "12345678"
     }
   ],
   "menu": [],
