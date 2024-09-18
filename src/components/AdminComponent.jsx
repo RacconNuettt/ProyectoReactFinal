@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Table, Form } from 'react-bootstrap';
-import { FaHome, FaFileAlt, FaEnvelope, FaBell, FaSignOutAlt } from 'react-icons/fa';
+import { FaHome, FaFileAlt, FaBell, FaSignOutAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/AdminPage.css';
 import { encode } from 'base64-arraybuffer';
 
 const AdminPage = () => {
-    const [selectedOption, setSelectedOption] = useState('Bienvenida Reina Isabel, desde esta pagina podras observar ordenes y agregar nuevos platos');
+    const [Menu, setMenu] = useState('Bienvenida Reina Isabel, desde esta pagina podras observar ordenes y agregar nuevos platos');
     const [foodItems, setFoodItems] = useState([]);
     const [orderItems, setOrderItems] = useState([]);
 
-    const handleOptionClick = (option) => {
-        setSelectedOption(option);
+    const OpcionMenu = (option) => {
+        setMenu(option);
     };
 
-    const renderContent = () => {
-        switch (selectedOption) {
+    const Contenido = () => {
+        switch (Menu) {
             case 'Inicio':
                 window.location.href = '/Home'; 
                 return null;
@@ -101,7 +101,7 @@ const AdminPage = () => {
                 window.location.href = '/Login'; 
                 return null;
             default:
-                return <div><h2>{selectedOption}</h2></div>;
+                return <div><h2>{Menu}</h2></div>;
         }
     };
 
@@ -126,29 +126,29 @@ const AdminPage = () => {
                 <Col xs={2} className="sidebar bg-success text-white">
                     <ul className="nav flex-column">
                         <li className="nav-item">
-                            <Button variant="link" className="nav-link text-white d-flex align-items-center" onClick={() => handleOptionClick('Inicio')}>
+                            <Button variant="link" className="nav-link text-white d-flex align-items-center" onClick={() => OpcionMenu('Inicio')}>
                                 <FaHome className="icon me-2" /> Inicio
                             </Button>
                         </li>
                         <li className="nav-item">
-                            <Button variant="link" className="nav-link text-white d-flex align-items-center" onClick={() => handleOptionClick('Documentos')}>
+                            <Button variant="link" className="nav-link text-white d-flex align-items-center" onClick={() => OpcionMenu('Documentos')}>
                                 <FaFileAlt className="icon me-2" /> Documentos
                             </Button>
                         </li>
                         <li className="nav-item">
-                            <Button variant="link" className="nav-link text-white d-flex align-items-center" onClick={() => handleOptionClick('Órdenes')}>
+                            <Button variant="link" className="nav-link text-white d-flex align-items-center" onClick={() => OpcionMenu('Órdenes')}>
                                 <FaBell className="icon me-2" /> Órdenes
                             </Button>
                         </li>
                         <li className="nav-item">
-                            <Button variant="link" className="nav-link text-white d-flex align-items-center" onClick={() => handleOptionClick('Salir')}>
+                            <Button variant="link" className="nav-link text-white d-flex align-items-center" onClick={() => OpcionMenu('Salir')}>
                                 <FaSignOutAlt className="icon me-2" /> Salir
                             </Button>
                         </li>
                     </ul>
                 </Col>
                 <Col xs={10} className="content bg-light p-4">
-                    {renderContent()}
+                    {Contenido()}
                 </Col>
             </Row>
         </Container>

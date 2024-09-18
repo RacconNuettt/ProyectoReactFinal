@@ -11,8 +11,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "base-64": "^1.0.0",
     "base64-arraybuffer": "^1.0.2",
     "bootstrap": "^5.3.3",
+    "emailjs": "^4.0.3",
     "emailjs-com": "^3.2.0",
     "json-server": "^1.0.0-beta.2",
     "react": "^18.3.1",

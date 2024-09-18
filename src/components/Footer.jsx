@@ -9,14 +9,14 @@ const Footer = () => {
         <Row className="mb-4">
           <Col md={4} className="text-center text-md-left mb-3 mb-md-0">
             <h5>Información</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Si quieres saber mas de nosotros, o de nuestros porfavor comunicate por medio de nuestras redes sociales</p>
           </Col>
           <Col md={4} className="text-center text-md-left mb-3 mb-md-0">
             <h5>Enlaces</h5>
             <ul className="list-unstyled">
-              <li><a href="#" className="text-white">Enlace 1</a></li>
-              <li><a href="#" className="text-white">Enlace 2</a></li>
-              <li><a href="#" className="text-white">Enlace 3</a></li>
+              <li><a href="#" className="text-white">Sobre Nosotros</a></li>
+              <li><a href="#" className="text-white">Contacto</a></li>
+              <li><a href="#" className="text-white">Menu</a></li>
             </ul>
           </Col>
           <Col md={4} className="text-center">

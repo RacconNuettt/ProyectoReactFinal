@@ -1,29 +1,16 @@
 {
   "users": [
     {
-      "id": "7077",
-      "nombre": "Jose Daniel Gonzalez Fuentes",
-      "email": "daniel233gf@gmail.com",
-      "password": "12345678",
-      "type": "admin"
-    },
-    {
-      "id": "3b53",
-      "nombre": "Nicole Barrantes Espinoza",
-      "email": "nikki@gmail.com",
+      "id": "2b0b",
+      "nombre": "Christian Manuel Acevedo ",
+      "email": "christian@gmail.com",
       "password": "12345678"
     },
     {
-      "id": "9c29",
-      "nombre": "Barry Yglesia Cisnes",
-      "email": "barry@gmail.com",
+      "id": "154e",
+      "nombre": "Adrian Zuniga Morales",
+      "email": "adrian@gmail.com",
       "password": "12345678"
-    },
-    {
-      "id": "1579",
-      "nombre": "Nicole Barrantes Espin",
-      "email": "niki@gmail.com",
-      "password": "123456787"
     }
   ],
   "menu": [],

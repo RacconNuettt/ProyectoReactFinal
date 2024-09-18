@@ -12,7 +12,9 @@ const HomePage = () => {
           <img src={logo} alt="El Alamo Logo" className="logo" />
         </div>
       </div>
+      
     </div>
+    
   );
 }
 
