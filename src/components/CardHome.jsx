@@ -5,6 +5,18 @@ import '../styles/CardHome.css';
 
 import casado from '../assets/casado.jpeg';
 import pinto from '../assets/pinto.jpeg';
+import gordonblue from '../assets/gordonblue.jpg'
+import empanadas from '../assets/Empanadas.jpg'
+import olladecarne from '../assets/olladecarne.jpg'
+import tortillas from '../assets/tortillas.jpg'
+import sopazteca from '../assets/tortillas.jpg'
+import sopademariscos from '../assets/sopademariscos.jpg'
+import tamales from '../assets/tamal.png'
+import chicharrones from '../assets/chicharrones.jpg'
+
+
+
+
 import { BiCategory } from "react-icons/bi";
 
 const CardHome = () => {
@@ -22,25 +34,40 @@ const CardHome = () => {
             imgSrc: pinto
         },
         {
-            title: "Platillo 3",
+            title: "Gordon Blue de Pollo",
             description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-            imgSrc: casado
+            imgSrc: gordonblue
         },
         {
-            title: "Platillo 4",
+            title: "Tortillas Palmeada",
             description: "Duis aute irure dolor in reprehenderit in voluptate velit esse.",
-            imgSrc: casado
+            imgSrc: tortillas
         },
         {
-            title: "Platillo 5",
+            title: "Sopa de Mariscos",
             description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa.",
-            imgSrc: casado
+            imgSrc: sopademariscos
         },
         {
-            title: "Platillo 6",
+            title: "Empanadas",
             description: "Curabitur pretium tincidunt lacus.",
-            imgSrc: casado
+            imgSrc: empanadas
         },
+        {
+            title: "Olla de Carne",
+            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse.",
+            imgSrc: olladecarne
+        },
+        {
+            title: "Tamales",
+            description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa.",
+            imgSrc: tamales
+        },
+        {
+            title: "Chicharrones",
+            description: "Curabitur pretium tincidunt lacus.",
+            imgSrc: chicharrones
+        }
     ];
 
     return (

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import img1 from "../assets/casado.jpeg"
-import img2 from "../assets/Chifrijo.jpeg"
+import img2 from "../assets/arrozconcamarones.jpg"
 import img3 from "../assets/pinto.jpeg"
 import '../styles/carrusel.css'
 
@@ -34,17 +34,17 @@ function Carrusel() {
                     <img
                         className="d-block w-100"
                         src={img2}
-                        alt="Queque de Fresa"
+                        alt="Camarones"
                     />
                     <Carousel.Caption>
-                        <h3>Chifrijo</h3>
+                        <h3>Arroz con Camarones</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
                         src={img3}
-                        alt="Queque de Navidad"
+                        alt="Gallo Pinto"
                     />
                     <Carousel.Caption>
                         <h3>Gallo Pinto</h3>

@@ -29,6 +29,15 @@ const RegisterForm = () => {
             return false;
         }
 
+        const hasUpperCase = /[A-Z]/.test(password);
+        const hasLowerCase = /[a-z]/.test(password);
+        const hasNumber = /\d/.test(password);
+
+        if (!hasUpperCase || !hasLowerCase || !hasNumber) {
+            toast.error("La contraseña debe contener al menos una mayúscula, una minúscula y un número");
+            return false;
+        }
+
         const users = await fetch('http://localhost:3008/users')
             .then(response => response.json());
 
@@ -59,18 +68,18 @@ const RegisterForm = () => {
                 },
                 body: JSON.stringify(formData)
             })
-            .then(response => response.json())
-            .then(() => {
-                toast.success("Usuario registrado exitosamente");
-                setFormData({
-                    nombre: '',
-                    email: '',
-                    password: ''
+                .then(response => response.json())
+                .then(() => {
+                    toast.success("Usuario registrado exitosamente");
+                    setFormData({
+                        nombre: '',
+                        email: '',
+                        password: ''
+                    });
+                })
+                .catch(() => {
+                    toast.error("Hubo un error al registrar el usuario");
                 });
-            })
-            .catch(() => {
-                toast.error("Hubo un error al registrar el usuario");
-            });
         }
     };
 
