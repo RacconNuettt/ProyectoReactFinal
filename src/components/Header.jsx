@@ -15,15 +15,8 @@ const Header = () => {
                         <Nav.Link href="/home" className="nav-link-custom">Inicio</Nav.Link>
                         <Nav.Link href="/AboutUs" className="nav-link-custom">Quienes Somos</Nav.Link>
                         <Nav.Link href="/Contacto" className="nav-link-custom">Contactenos</Nav.Link>
-                        <NavDropdown title="Menu" id="navbarScrollingDropdown" className="nav-dropdown-custom">
-                            <NavDropdown.Item href="#action3">Desayunos</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">Almuerzos</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">Cenas</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">Mariscos</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">Comidas</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action5">Personalizar Orden</NavDropdown.Item>
-                        </NavDropdown>
+                        <Nav.Link href="/Menu" className="nav-link-custom">Menu</Nav.Link>
+                        
                     </Nav>
                     <Form className="form-custom d-flex">
                         <Form.Control

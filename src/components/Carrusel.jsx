@@ -14,39 +14,44 @@ function Carrusel() {
     };
 
     return (
-        <Carousel
-            activeIndex={index}
-            onSelect={handleSelect}
-            className="custom_carousel"
-        >
-            <Carousel.Item>
-                <img className="d-block w-100" src={img1} alt="Mitad" />
-                <Carousel.Caption>
-                    <h3>Casados</h3>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src={img2}
-                    alt="Queque de Fresa"
-                />
-                <Carousel.Caption>
-                    <h3>Chifrijo</h3>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src={img3}
-                    alt="Queque de Navidad"
-                />
-                <Carousel.Caption>
-                    <h3>Gallo Pinto</h3>
-                </Carousel.Caption>
-            </Carousel.Item>
-        </Carousel>
-
+        <>
+            <div>
+                <br />
+                <br />
+            </div>
+            <Carousel
+                activeIndex={index}
+                onSelect={handleSelect}
+                className="custom_carousel"
+            >
+                <Carousel.Item>
+                    <img className="d-block w-100" src={img1} alt="Mitad" />
+                    <Carousel.Caption>
+                        <h3>Casados</h3>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        src={img2}
+                        alt="Queque de Fresa"
+                    />
+                    <Carousel.Caption>
+                        <h3>Chifrijo</h3>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        src={img3}
+                        alt="Queque de Navidad"
+                    />
+                    <Carousel.Caption>
+                        <h3>Gallo Pinto</h3>
+                    </Carousel.Caption>
+                </Carousel.Item>
+            </Carousel>
+        </>
     );
 }
 

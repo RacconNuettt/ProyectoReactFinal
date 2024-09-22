@@ -2,6 +2,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { FaWhatsapp, FaInstagram, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import '../styles/Footer.css';
 
+
 const Footer = () => {
   return (
     <footer className="footer bg-dark text-white py-4">
@@ -14,7 +15,7 @@ const Footer = () => {
           <Col md={4} className="text-center text-md-left mb-3 mb-md-0">
             <h5>Enlaces</h5>
             <ul className="list-unstyled">
-              <li><a href="#" className="text-white">Sobre Nosotros</a></li>
+              <li><a href="/AboutUs" className="text-white">Sobre Nosotros</a></li>
               <li><a href="#" className="text-white">Contacto</a></li>
               <li><a href="#" className="text-white">Menu</a></li>
             </ul>

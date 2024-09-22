@@ -1,33 +1,9 @@
 {
   "users": [
     {
-      "id": "2b0b",
-      "nombre": "Christian Manuel Acevedo ",
-      "email": "christian@gmail.com",
-      "password": "12345678"
-    },
-    {
-      "id": "154e",
-      "nombre": "Adrian Zuniga Morales",
-      "email": "adrian@gmail.com",
-      "password": "12345678"
-    },
-    {
-      "id": "1e73",
-      "nombre": "Jeffry Medina",
-      "email": "jeffrey@gmail.com",
-      "password": "12345678"
-    },
-    {
-      "id": "064f",
-      "nombre": "Alejandro Carmona",
-      "email": "alejandro@gmail.com",
-      "password": "12345678"
-    },
-    {
-      "id": "d312",
-      "nombre": "Pipe Baltolano",
-      "email": "pipe@gmail.com",
+      "id": "c175",
+      "nombre": "Jose Daniel Gonzaelz Fuentes",
+      "email": "jose@gmail.com",
       "password": "12345678"
     }
   ],

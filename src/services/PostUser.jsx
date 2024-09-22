@@ -9,7 +9,7 @@ async function postRegister(name, email,password) {
 
         };
 
-        const response = await fetch("http://localhost:3001/users", {
+        const response = await fetch("http://localhost:3008/users", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

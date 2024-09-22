@@ -1,63 +1,30 @@
-import React, { useState } from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import 'bootstrap/dist/css/bootstrap.min.css';
- 
-const ContactUs = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
+import React from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import { PiX } from "react-icons/pi";
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Aquí puedes manejar el envío del formulario
-        console.log({ name, email, message });
-        alert('Formulario enviado');
-    };
+const ContactUs = () => {
+    const position = [10.0866232, -84.7273769];
+    const zoom = 15;
 
     return (
-        <div className="container mt-5">
-            <h2>Contáctanos</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                    <label htmlFor="name" className="form-label">Nombre</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        required
-                    />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="email" className="form-label">Email</label>
-                    <input
-                        type="email"
-                        className="form-control"
-                        id="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="message" className="form-label">Mensaje</label>
-                    <textarea
-                        className="form-control"
-                        id="message"
-                        rows="3"
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                        required
-                    ></textarea>
-                </div>
-                <button type="submit" className="btn btn-primary">Enviar</button>
-            </form>
-
-            <div className="mt-5">
-                <h3>Nuestra Ubicación</h3>
-                <MapDiv />
-            </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px' }}>
+            <h1>Puedes encontrarnos en la siguiente direccion</h1>
+            <MapContainer
+                center={position}
+                zoom={zoom}
+                style={{ border: 'solid 2px #ffffff', padding: '5px', height: "300px", width: "80%" }}
+            >
+                <TileLayer
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                />
+                <Marker position={position}>
+                    <Popup>
+                        Nuestra localizacion
+                    </Popup>
+                </Marker>
+            </MapContainer>
         </div>
     );
 };

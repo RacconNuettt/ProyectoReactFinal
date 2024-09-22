@@ -29,7 +29,7 @@ const RegisterForm = () => {
             return false;
         }
 
-        const users = await fetch('http://localhost:3005/users')
+        const users = await fetch('http://localhost:3008/users')
             .then(response => response.json());
 
         const emailExists = users.some(user => user.email === email);
@@ -52,7 +52,7 @@ const RegisterForm = () => {
         e.preventDefault();
 
         if (await validateForm()) {
-            fetch('http://localhost:3005/users', {
+            fetch('http://localhost:3008/users', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

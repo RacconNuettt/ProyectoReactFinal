@@ -1,10 +1,8 @@
-import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import imagen1 from '../../assets/historia.jpg'
+import imagen2 from '../../assets/soda.jpg'
 
-const historiaImg = '';
-const quienesImg = '';
-const menuImg = '';
 
 const InformationUs = () => {
     return (
@@ -20,7 +18,7 @@ const InformationUs = () => {
             <Row className="mt-4">
                 <Col md={4}>
                     <Card>
-                        <Card.Img variant="top" src={historiaImg} />
+                        <Card.Img variant="top" src={imagen1} />
                         <Card.Body>
                             <Card.Title>Nuestra Historia</Card.Title>
                             <Card.Text>
@@ -32,7 +30,7 @@ const InformationUs = () => {
                 </Col>
                 <Col md={4}>
                     <Card>
-                        <Card.Img variant="top" src={quienesImg} />
+                        <Card.Img variant="top" src={imagen2}/>
                         <Card.Body>
                             <Card.Title>Quiénes Somos</Card.Title>
                             <Card.Text>
@@ -45,7 +43,7 @@ const InformationUs = () => {
                 </Col>
                 <Col md={4}>
                     <Card>
-                        <Card.Img variant="top" src={menuImg} />
+                        <Card.Img variant="top" src={imagen2} />
                         <Card.Body>
                             <Card.Title>Nuestro Menú</Card.Title>
                             <Card.Text>

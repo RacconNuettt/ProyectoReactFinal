@@ -5,6 +5,8 @@ import Home from "../pages/Home"
 import Admin from "../pages/Admin"
 import AboutUs from "../pages/AboutUs"
 import Contacto from "../pages/Contacto"
+import Menu from "../pages/Menu"
+
 
 
 const Routing = () => {
@@ -17,6 +19,7 @@ const Routing = () => {
                 <Route path='/Admin'element={<Admin />}></Route>
                 <Route path='/AboutUs' element={<AboutUs />}></Route>
                 <Route path='/Contacto' element={<Contacto />}></Route>
+                <Route path='/Menu' element={<Menu />}></Route>
             </Routes>
         </Router>
     )

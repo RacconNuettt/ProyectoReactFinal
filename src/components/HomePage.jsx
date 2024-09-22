@@ -13,7 +13,6 @@ const HomePage = () => {
           <img src={logo} alt="El Alamo Logo" className="logo" />
         </div>
       </div>
-      <img src={tamal} alt="Hojas de Plátano" className="hojas-platanos" />
     </div>
   );
 }

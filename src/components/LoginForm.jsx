@@ -19,7 +19,7 @@ const LoginForm = () => {
         }
 
         try {
-            const response = await fetch('http://localhost:3005/users');
+            const response = await fetch('http://localhost:3008/users');
             const users = await response.json();
 
             const userExists = users.some(user => user.email === email && user.password === password);

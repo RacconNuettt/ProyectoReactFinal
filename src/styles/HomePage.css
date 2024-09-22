@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    height: 630px;
     position: relative; /* Para posicionar elementos absolutos */
 }
 
