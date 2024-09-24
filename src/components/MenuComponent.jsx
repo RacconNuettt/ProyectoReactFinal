@@ -19,41 +19,21 @@ const MenuComponent = () => {
             { nombre: "Platillo 2", descripcion: "Descripción breve", precio: "₡2500", imagen: empanadas },
             { nombre: "Platillo 3", descripcion: "Descripción breve", precio: "₡3000", imagen: tortillas },
             { nombre: "Platillo 4", descripcion: "Descripción breve", precio: "₡3500", imagen: tamales },
-
         ],
+
         almuerzo: [
             { nombre: "Platillo 1", descripcion: "Descripción breve", precio: "₡2000", imagen: casado },
             { nombre: "Platillo 2", descripcion: "Descripción breve", precio: "₡2500", imagen: olladecarne },
             { nombre: "Platillo 3", descripcion: "Descripción breve", precio: "₡3000", imagen: chicharrones },
             { nombre: "Platillo 4", descripcion: "Descripción breve", precio: "₡3500", imagen: sopazteca },
-
         ],
+        
         cenas: [
             { nombre: "Platillo 1", descripcion: "Descripción breve", precio: "₡2000", imagen: sopademariscos },
             { nombre: "Platillo 2", descripcion: "Descripción breve", precio: "₡2500", imagen: gordonblue },
             { nombre: "Platillo 3", descripcion: "Descripción breve", precio: "₡3000", imagen: casado },
             { nombre: "Platillo 4", descripcion: "Descripción breve", precio: "₡3500", imagen: pinto },
         ],
-    /*  bebidas:[
-            { nombre: "Platillo 1", descripcion: "Descripción breve", precio: "₡2000", imagen: "link-imagen1.jpg" },
-            { nombre: "Platillo 2", descripcion: "Descripción breve", precio: "₡2500", imagen: "link-imagen2.jpg" },
-            { nombre: "Platillo 3", descripcion: "Descripción breve", precio: "₡3000", imagen: "link-imagen3.jpg" },
-            { nombre: "Platillo 4", descripcion: "Descripción breve", precio: "₡3500", imagen: "link-imagen4.jpg" },
-            { nombre: "Platillo 5", descripcion: "Descripción breve", precio: "₡4000", imagen: "link-imagen5.jpg" },
-            { nombre: "Platillo 6", descripcion: "Descripción breve", precio: "₡4500", imagen: "link-imagen6.jpg" },
-            { nombre: "Platillo 7", descripcion: "Descripción breve", precio: "₡5000", imagen: "link-imagen7.jpg" },
-            { nombre: "Platillo 8", descripcion: "Descripción breve", precio: "₡5000", imagen: "link-imagen8.jpg" }
-        ], */
-       /*  tamales:[
-            { nombre: "Platillo 1", descripcion: "Descripción breve", precio: "₡2000", imagen: "link-imagen1.jpg" },
-            { nombre: "Platillo 2", descripcion: "Descripción breve", precio: "₡2500", imagen: "link-imagen2.jpg" },
-            { nombre: "Platillo 3", descripcion: "Descripción breve", precio: "₡3000", imagen: "link-imagen3.jpg" },
-            { nombre: "Platillo 4", descripcion: "Descripción breve", precio: "₡3500", imagen: "link-imagen4.jpg" },
-            { nombre: "Platillo 5", descripcion: "Descripción breve", precio: "₡4000", imagen: "link-imagen5.jpg" },
-            { nombre: "Platillo 6", descripcion: "Descripción breve", precio: "₡4500", imagen: "link-imagen6.jpg" },
-            { nombre: "Platillo 7", descripcion: "Descripción breve", precio: "₡5000", imagen: "link-imagen7.jpg" },
-            { nombre: "Platillo 8", descripcion: "Descripción breve", precio: "₡5000", imagen: "link-imagen8.jpg" }
-        ] */
     
     };
 
@@ -153,32 +133,11 @@ const MenuComponent = () => {
                     </Carousel.Item>
                 </Carousel>
             </div>
-            <br />
-            <br />
-        {/* <div className="menu-section">
-                <h2 className="text-success">Tamales</h2>
-                <br />
-                <Carousel 
-                    controls={true} 
-                    indicators={false} 
-                    interval={null}
-                    prevIcon={<span className="custom-prev-icon">&#8249;</span>}
-                    nextIcon={<span className="custom-next-icon">&#8250;</span>}
-                >
-                    <Carousel.Item>
-                        <div className="d-flex justify-content-around">
-                            {renderMenuItems(menuData.tamales.slice(0, 4))}
-                        </div>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <div className="d-flex justify-content-around">
-                            {renderMenuItems(menuData.tamales.slice(4, 8))}
-                        </div>
-                    </Carousel.Item>
-                </Carousel>
-            </div> */}
-            <br />
 
+            <br />
+            <br />
+            <br />
+            
         </div>
     );
 };

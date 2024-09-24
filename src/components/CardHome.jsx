@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../styles/CardHome.css';
+import {Link} from 'react-router-dom'
 
 import casado from '../assets/casado.jpeg';
 import pinto from '../assets/pinto.jpeg';
@@ -76,7 +77,7 @@ const CardHome = () => {
                 <br />
                 <br />
             </div>
-            <h1 id="title-p" className="text-center mb-4 title-text">Conoce nuestro menú</h1>
+            <h1 id="title-p" className="text-center mb-4 title-text">Conoce nuestro <Link to={'/Menu'}>menu</Link></h1>
             <Row className="justify-content-center">
                 {dishes.map((dish, index) => (
                     <Col xs={12} md={6} lg={4} key={index} className="mb-4">

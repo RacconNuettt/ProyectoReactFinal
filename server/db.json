@@ -17,6 +17,12 @@
       "nombre": "Desiree Gonzalez Fuentes",
       "email": "desire@gmail.com",
       "password": "Desire1234"
+    },
+    {
+      "id": "0ebc",
+      "nombre": "Diler mamapichas",
+      "email": "mamapichas@gmail.com",
+      "password": "Pipe123456"
     }
   ],
   "menu": [],
