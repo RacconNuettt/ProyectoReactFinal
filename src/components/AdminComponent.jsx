@@ -1,15 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Button, Table, Form } from 'react-bootstrap';
 import { FaHome, FaFileAlt, FaBell, FaSignOutAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/AdminPage.css';
 import { encode } from 'base64-arraybuffer';
+import { getMenu } from '../services/GetMenu';
+import { postMenu } from '../services/PostMenu';
+import { deleteMenu } from '../services/DeleteMenu';
+import { updateMenu } from '../services/UpdateMenu';
 
 const AdminPage = () => {
-    const [Menu, setMenu] = useState('Bienvenida Reina Isabel, desde esta pagina podras observar ordenes y agregar nuevos platos');
+    const [Menu, setMenu] = useState('Bienvenida Reina Isabel, desde esta página podrás observar órdenes y agregar nuevos platos');
     const [foodItems, setFoodItems] = useState([]);
     const [orderItems, setOrderItems] = useState([]);
+    const [formData, setFormData] = useState({
+        name: '',
+        category: '',
+        price: '',
+        description: '',
+        image: ''
+    });
+    const [editingId, setEditingId] = useState(null);
+
+    useEffect(() => {
+        loadMenu();
+    }, []);
+
+    const loadMenu = async () => {
+        const items = await getMenu();
+        setFoodItems(items);
+    };
 
     const OpcionMenu = (option) => {
         setMenu(option);
@@ -27,26 +48,26 @@ const AdminPage = () => {
                         <Form onSubmit={handleFoodSubmit}>
                             <Form.Group controlId="formFoodName">
                                 <Form.Label>Nombre</Form.Label>
-                                <Form.Control type="text" placeholder="Nombre del plato" required />
+                                <Form.Control type="text" name="name" value={formData.name} onChange={handleInputChange} placeholder="Nombre del plato" required />
                             </Form.Group>
                             <Form.Group controlId="formFoodCategory">
                                 <Form.Label>Categoría</Form.Label>
-                                <Form.Control type="text" placeholder="Categoría del plato" required />
+                                <Form.Control type="text" name="category" value={formData.category} onChange={handleInputChange} placeholder="Categoría del plato" required />
                             </Form.Group>
                             <Form.Group controlId="formFoodPrice">
                                 <Form.Label>Precio</Form.Label>
-                                <Form.Control type="number" step="0.01" placeholder="Precio" required />
+                                <Form.Control type="number" name="price" value={formData.price} onChange={handleInputChange} step="0.01" placeholder="Precio" required />
                             </Form.Group>
                             <Form.Group controlId="formFoodDescription">
                                 <Form.Label>Descripción</Form.Label>
-                                <Form.Control as="textarea" rows={3} placeholder="Descripción" required />
+                                <Form.Control as="textarea" name="description" value={formData.description} onChange={handleInputChange} rows={3} placeholder="Descripción" required />
                             </Form.Group>
                             <Form.Group controlId="formFoodImage">
                                 <Form.Label>Imagen</Form.Label>
                                 <Form.Control type="file" onChange={handleImageUpload} required />
                             </Form.Group>
                             <Button variant="primary" type="submit">
-                                Agregar
+                                {editingId ? 'Actualizar' : 'Agregar'}
                             </Button>
                         </Form>
                         <Table striped bordered hover>
@@ -56,15 +77,20 @@ const AdminPage = () => {
                                     <th>Categoría</th>
                                     <th>Precio</th>
                                     <th>Descripción</th>
+                                    <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {foodItems.map((item, index) => (
-                                    <tr key={index}>
+                                {foodItems.map((item) => (
+                                    <tr key={item.id}>
                                         <td>{item.name}</td>
                                         <td>{item.category}</td>
                                         <td>{item.price}</td>
                                         <td>{item.description}</td>
+                                        <td>
+                                            <Button variant="warning" onClick={() => handleEdit(item)}>Editar</Button>
+                                            <Button variant="danger" onClick={() => handleDelete(item.id)}>Eliminar</Button>
+                                        </td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -74,7 +100,7 @@ const AdminPage = () => {
             case 'Órdenes':
                 return (
                     <div>
-                        <h2>Ordenes</h2>
+                        <h2>Órdenes</h2>
                         <Table striped bordered hover>
                             <thead>
                                 <tr>
@@ -105,8 +131,9 @@ const AdminPage = () => {
         }
     };
 
-    const handleFoodSubmit = (e) => {
-        e.preventDefault();
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
     };
 
     const handleImageUpload = (e) => {
@@ -115,9 +142,44 @@ const AdminPage = () => {
             const reader = new FileReader();
             reader.onloadend = () => {
                 const base64String = encode(reader.result);
+                setFormData({ ...formData, image: base64String });
             };
             reader.readAsArrayBuffer(file);
         }
+    };
+
+    const handleFoodSubmit = async (e) => {
+        e.preventDefault();
+        if (editingId) {
+            await updateMenu(editingId, formData);
+            setEditingId(null);
+        } else {
+            await postMenu(formData.name, formData.price, formData.category, formData.description, formData.image);
+        }
+        setFormData({
+            name: '',
+            category: '',
+            price: '',
+            description: '',
+            image: ''
+        });
+        loadMenu(); // Refresh the menu after adding or updating
+    };
+
+    const handleDelete = async (id) => {
+        await deleteMenu(id);
+        loadMenu(); // Refresh the menu after deletion
+    };
+
+    const handleEdit = (item) => {
+        setFormData({
+            name: item.name,
+            category: item.category,
+            price: item.price,
+            description: item.description,
+            image: item.image
+        });
+        setEditingId(item.id);
     };
 
     return (
