@@ -23,7 +23,7 @@ const RegisterForm = () => {
     };
 
     // With this arrow function, I perform various types of validations to create users
-    const validateForm = async () => {z
+    const validateForm = async () => {
         const { nombre, email, password } = formData;
 
         // This validation prevents the user from submitting an empty registration form

@@ -11,16 +11,118 @@
       "name": "admin",
       "email": "admin@gmail.com",
       "password": "Admin1234"
+    },
+    {
+      "id": "9147",
+      "name": "Nicole",
+      "email": "nikki@gmail.com",
+      "password": "Sicario2004"
     }
   ],
   "menu": [
     {
-      "name": "Casado",
+      "name": "Gordon Blue",
+      "category": "Cenas",
+      "price": "4000",
+      "description": "Gordon blue de pollo",
+      "image": "blob:http://localhost:5173/fc014553-ddd1-4b67-8095-02966eafa773",
+      "id": "33ea"
+    },
+    {
+      "name": "Casado con carne en salsa",
       "category": "Almuerzos",
-      "price": "2800",
-      "description": "Arroz con frijoles, con carne en salsa.",
-      "image": "blob:http://localhost:5173/f02f229a-246e-49fd-a874-4bf3d1c066e4",
-      "id": "cfb1"
+      "price": "3500",
+      "description": "Arroz con frijoles, carne en salsa y ensalada verde, con platanito frito",
+      "image": "blob:http://localhost:5173/2b1a1fc3-8b6e-44b1-9b1d-4d991f0bfae3",
+      "id": "d1bd"
+    },
+    {
+      "name": "Empanadas",
+      "category": "Desayunos",
+      "price": "1200",
+      "description": "Empanadas con frijoles",
+      "image": "blob:http://localhost:5173/9d4ef630-3561-4fe9-9ab7-ef61a6ce1878",
+      "id": "376b"
+    },
+    {
+      "id": "08bc",
+      "name": "Pinto",
+      "price": "3200",
+      "category": "Desayunos",
+      "description": "Arroz y frijoles rojos sazonados con distintas especias",
+      "image": "blob:http://localhost:5173/f2beb1d0-22a5-4b8b-960a-504fb7ddf0bb"
+    },
+    {
+      "id": "75cc",
+      "name": "Tortillas",
+      "price": "500",
+      "category": "Desayunos",
+      "description": "Tortillitas hechas a mano",
+      "image": "blob:http://localhost:5173/a1b5d4b9-0660-4d8d-8f53-bd9370b351a2"
+    },
+    {
+      "id": "39de",
+      "name": "Tamales de cerdo",
+      "price": "1100",
+      "category": "Desayunos",
+      "description": "Tamalitos de carne de cerdo",
+      "image": "blob:http://localhost:5173/37d0db3b-5a96-4d13-8209-63e8936f17b6"
+    },
+    {
+      "id": "bdd4",
+      "name": "Sopa Azteca",
+      "price": "3500",
+      "category": "Cenas",
+      "description": "Caldo de pollo con tomates, chiles pasilla y crujientes tiras de tortilla. ",
+      "image": "blob:http://localhost:5173/e4f790cb-05e9-4646-92d4-40fd2a76ae84"
+    },
+    {
+      "id": "8ae8",
+      "name": "Sopa Mariscos",
+      "price": "3500",
+      "category": "Almuerzos",
+      "description": "Con una mezcla de camarones, mejillones, calamares y pescado.",
+      "image": "blob:http://localhost:5173/dc7ea845-3da7-4ee1-baeb-1fd6b4852bad"
+    },
+    {
+      "id": "d363",
+      "name": "Chifrijo",
+      "price": "3000",
+      "category": "Almuerzo",
+      "description": "Arroz y frijoles rojos con jugosos trozos de cerdo frito.",
+      "image": "blob:http://localhost:5173/63b36c12-e0b0-4ab3-a48b-4bc5ffa804c7"
+    },
+    {
+      "id": "9252",
+      "name": "Gordon Blue",
+      "price": "3000",
+      "category": "Almuerzos",
+      "description": "Filete de pollo empanizado y relleno de jamón y queso derretido",
+      "image": "blob:http://localhost:5173/2374b287-737f-45f1-8f30-b864299db695"
+    },
+    {
+      "id": "bea2",
+      "name": "Arroz con camarones",
+      "price": "3200",
+      "category": "Almuerzos",
+      "description": "Arroz esponjoso con jugosos camarones y verduras frescas",
+      "image": "blob:http://localhost:5173/ca11a466-13ba-4836-90c9-1d85f1bdc787"
+    },
+    {
+      "id": "9c0f",
+      "name": "Cantones",
+      "price": "3000",
+      "category": "Cenas",
+      "description": "Arroz, verduras frescas, camarones y pollo. Sazonado con salsa de soya y un toque de huevo",
+      "image": "blob:http://localhost:5173/a33f6fb6-4874-416d-9024-4006f0686489"
+    },
+    {
+      "id": "28af",
+      "name": "Macarrones a la Carbonara",
+      "price": "4000",
+      "category": "Cenas",
+      "description": "Pasta al dente con una cremosa salsa de yema de huevo, queso parmesano y panceta crujiente. ",
+      "image": "blob:http://localhost:5173/dd388f2b-3684-4f30-abd4-5708e6038c39"
     }
   ],
   "orders": []
