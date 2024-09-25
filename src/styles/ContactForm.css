@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+
+.contact-form-container {
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Nerko One', cursive;
+    font-size: 28px;
+    color: #008000bb;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-label {
+    font-weight: bold;
+    font-family: 'Nerko One', cursive;
+    color: #008000bb;
+}
+
+.form-input {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Nerko One' cursive;
+}
+
+.form-checkbox-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-checkbox {
+    margin-right: 10px;
+    font-family: 'Nerko One', cursive;
+}
+
+.terms-link {
+    font-size: 14px;
+    color: #007bff;
+    font-family: 'Nerko One', cursive;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    font-family: 'Nerko One', cursive;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}

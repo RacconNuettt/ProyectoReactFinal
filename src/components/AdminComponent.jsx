@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Button, Table, Form } from 'react-bootstrap';
 import { FaHome, FaFileAlt, FaBell, FaSignOutAlt } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { useDropzone } from 'react-dropzone';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/AdminPage.css';
-import { encode } from 'base64-arraybuffer';
 import { getMenu } from '../services/GetMenu';
 import { postMenu } from '../services/PostMenu';
 import { deleteMenu } from '../services/DeleteMenu';
@@ -64,7 +63,7 @@ const AdminPage = () => {
                             </Form.Group>
                             <Form.Group controlId="formFoodImage">
                                 <Form.Label>Imagen</Form.Label>
-                                <Form.Control type="file" onChange={handleImageUpload} required />
+                                <Dropzone setFormData={setFormData} formData={formData} />
                             </Form.Group>
                             <Button variant="primary" type="submit">
                                 {editingId ? 'Actualizar' : 'Agregar'}
@@ -136,18 +135,6 @@ const AdminPage = () => {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleImageUpload = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                const base64String = encode(reader.result);
-                setFormData({ ...formData, image: base64String });
-            };
-            reader.readAsArrayBuffer(file);
-        }
-    };
-
     const handleFoodSubmit = async (e) => {
         e.preventDefault();
         if (editingId) {
@@ -163,12 +150,12 @@ const AdminPage = () => {
             description: '',
             image: ''
         });
-        loadMenu(); // Refresh the menu after adding or updating
+        loadMenu(); 
     };
 
     const handleDelete = async (id) => {
         await deleteMenu(id);
-        loadMenu(); // Refresh the menu after deletion
+        loadMenu(); 
     };
 
     const handleEdit = (item) => {
@@ -214,6 +201,28 @@ const AdminPage = () => {
                 </Col>
             </Row>
         </Container>
+    );
+};
+
+const Dropzone = ({ setFormData, formData }) => {
+    const onDrop = (acceptedFiles) => {
+        const file = acceptedFiles[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setFormData({ ...formData, image: URL.createObjectURL(file) });
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+
+    const { getRootProps, getInputProps } = useDropzone({ onDrop });
+
+    return (
+        <div {...getRootProps()} style={{ border: '2px dashed #007bff', padding: '20px', borderRadius: '5px' }}>
+            <input {...getInputProps()} />
+            <p>Arrastra y suelta una imagen aquí, o haz clic para seleccionar una imagen</p>
+        </div>
     );
 };
 

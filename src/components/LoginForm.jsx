@@ -22,12 +22,23 @@ const LoginForm = () => {
             const response = await fetch('http://localhost:3008/users');
             const users = await response.json();
 
-            const userExists = users.some(user => user.email === email && user.password === password);
+            const user = users.find(user => user.email === email && user.password === password);
 
-            if (userExists) {
-                toast.success("Inicio de sesión exitoso");
+            if (user) {
+                
 
-                setTimeout(() => navigate('/Home'), 1500);
+                if (email === 'admin@gmail.com' && password === 'Admin1234') {
+                    localStorage.setItem('isAuthenticated', true);
+                    localStorage.setItem('isAdmin', true);
+                    setTimeout(() => navigate('/Admin'), 1500);
+                    toast.success("Bienvenida devuelta Reina Isabel!");
+                } else {
+                    localStorage.setItem('isAuthenticated', true);
+                    localStorage.setItem('isAdmin', false);
+                    setTimeout(() => navigate('/Home'), 1500);
+                    toast.success("Inicio de sesion exitoso!");
+                }
+
             } else {
                 toast.error("Usuario o contraseña incorrectos");
             }

@@ -1,51 +1,49 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Carousel, Button, Card } from 'react-bootstrap';
 import '../styles/MenuComponent.css';
-import casado from '../assets/casado.jpeg';
-import pinto from '../assets/pinto.jpeg';
-import gordonblue from '../assets/gordonblue.jpg'
-import empanadas from '../assets/Empanadas.jpg'
-import olladecarne from '../assets/olladecarne.jpg'
-import tortillas from '../assets/tortillas.jpg'
-import sopazteca from '../assets/tortillas.jpg'
-import sopademariscos from '../assets/sopademariscos.jpg'
-import tamales from '../assets/tamal.png'
-import chicharrones from '../assets/chicharrones.jpg'
+import { getMenu } from '../services/GetMenu'; 
+import { Link } from 'react-router-dom'
 
 const MenuComponent = () => {
-    const menuData = {
-        desayuno: [
-            { nombre: "Pinto", descripcion: "Arroz y frijoles sazonado con cebolla, chile dulce y un toque de culantro con nuestra salsa lisano casera"  ,precio: "₡2000", imagen: pinto },
-            { nombre: "Platillo 2", descripcion: "Descripción breve", precio: "₡2500", imagen: empanadas },
-            { nombre: "Platillo 3", descripcion: "Descripción breve", precio: "₡3000", imagen: tortillas },
-            { nombre: "Platillo 4", descripcion: "Descripción breve", precio: "₡3500", imagen: tamales },
-        ],
+    const [menuData, setMenuData] = useState({
+        desayuno: [],
+        almuerzo: [],
+        cena: [],
+    });
 
-        almuerzo: [
-            { nombre: "Platillo 1", descripcion: "Descripción breve", precio: "₡2000", imagen: casado },
-            { nombre: "Platillo 2", descripcion: "Descripción breve", precio: "₡2500", imagen: olladecarne },
-            { nombre: "Platillo 3", descripcion: "Descripción breve", precio: "₡3000", imagen: chicharrones },
-            { nombre: "Platillo 4", descripcion: "Descripción breve", precio: "₡3500", imagen: sopazteca },
-        ],
-        
-        cenas: [
-            { nombre: "Platillo 1", descripcion: "Descripción breve", precio: "₡2000", imagen: sopademariscos },
-            { nombre: "Platillo 2", descripcion: "Descripción breve", precio: "₡2500", imagen: gordonblue },
-            { nombre: "Platillo 3", descripcion: "Descripción breve", precio: "₡3000", imagen: casado },
-            { nombre: "Platillo 4", descripcion: "Descripción breve", precio: "₡3500", imagen: pinto },
-        ],
-    
+    useEffect(() => {
+        loadMenu();
+    }, []);
+
+    const loadMenu = async () => {
+        const items = await getMenu(); 
+        const categorizedMenu = {
+            desayuno: [],
+            almuerzo: [],
+            cena: [],
+        };
+
+        items.forEach(item => {
+            if (item.category === 'Desayunos') {
+                categorizedMenu.desayuno.push(item);
+            } else if (item.category === 'Almuerzos') {
+                categorizedMenu.almuerzo.push(item);
+            } else if (item.category === 'Cenas') {
+                categorizedMenu.cena.push(item);
+            }
+        });
+
+        setMenuData(categorizedMenu);
     };
 
     const renderMenuItems = (items) => {
         return items.map((item, index) => (
             <Card className="menu-item" key={index} style={{ width: '12rem', margin: '0 auto' }}>
-                <Card.Img variant="top" src={item.imagen} alt={item.nombre} style={{ height: '150px', objectFit: 'cover' }} />
+                <Card.Img variant="top" src={item.image} alt={item.name} style={{ height: '150px', objectFit: 'cover' }} />
                 <Card.Body>
-                    <Card.Title>{item.nombre}</Card.Title>
-                    <Card.Text>{item.descripcion}</Card.Text>
-                    <Card.Text>{item.acompanamiento}</Card.Text>
-                    <Card.Text><strong>{item.precio}</strong></Card.Text>
+                    <Card.Title>{item.name}</Card.Title>
+                    <Card.Text>{item.description}</Card.Text>
+                    <Card.Text><strong>{item.price}</strong></Card.Text>
                     <Button variant="success">Ordenar</Button>
                 </Card.Body>
             </Card>
@@ -71,12 +69,7 @@ const MenuComponent = () => {
                 >
                     <Carousel.Item>
                         <div className="d-flex justify-content-around">
-                            {renderMenuItems(menuData.desayuno.slice(0, 4))}
-                        </div>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <div className="d-flex justify-content-around">
-                            {renderMenuItems(menuData.desayuno.slice(4, 8))}
+                            {renderMenuItems(menuData.desayuno)}
                         </div>
                     </Carousel.Item>
                 </Carousel>
@@ -97,12 +90,7 @@ const MenuComponent = () => {
                 >
                     <Carousel.Item>
                         <div className="d-flex justify-content-around">
-                            {renderMenuItems(menuData.almuerzo.slice(0, 4))}
-                        </div>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <div className="d-flex justify-content-around">
-                            {renderMenuItems(menuData.almuerzo.slice(4, 8))}
+                            {renderMenuItems(menuData.almuerzo)}
                         </div>
                     </Carousel.Item>
                 </Carousel>
@@ -123,15 +111,17 @@ const MenuComponent = () => {
                 >
                     <Carousel.Item>
                         <div className="d-flex justify-content-around">
-                            {renderMenuItems(menuData.cenas.slice(0, 4))}
-                        </div>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <div className="d-flex justify-content-around">
-                            {renderMenuItems(menuData.cenas.slice(4, 8))}
+                            {renderMenuItems(menuData.cena)}
                         </div>
                     </Carousel.Item>
                 </Carousel>
+            </div>
+            <br />
+            <br />
+            <br />  
+
+            <div className='menu-section'>
+                <h2><Link to={'/Order'} style={{textDecoration:"none"}}>Tambien puedes personalizar tu pedido</Link></h2>
             </div>
 
             <br />

@@ -4,11 +4,11 @@ import "leaflet/dist/leaflet.css";
 import { PiX } from "react-icons/pi";
 
 const ContactUs = () => {
-    const position = [10.0866232, -84.7273769];
+    const position = [9.990184, -84.288440];
     const zoom = 15;
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px', fontFamily:'Nerko one'}}>
             <h1>Puedes encontrarnos en la siguiente direccion</h1>
             <MapContainer
                 center={position}

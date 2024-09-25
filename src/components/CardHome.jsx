@@ -36,37 +36,44 @@ const CardHome = () => {
         },
         {
             title: "Gordon Blue de Pollo",
-            description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+            description: "Pechugas de pollo o carne de cerdo, rellenas de jamón y queso",
+            category:"Categoria: Cena",
             imgSrc: gordonblue
         },
         {
             title: "Tortillas Palmeada",
-            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse.",
+            description: "Tortillas de mano caseras",
+            category:"Desayuno",
             imgSrc: tortillas
         },
         {
             title: "Sopa de Mariscos",
-            description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa.",
+            description: "Camarones, mejillones, almejas, calamares y pescado, todo cocido en un caldo sabroso",
+            category:"Almuerzo",
             imgSrc: sopademariscos
         },
         {
             title: "Empanadas",
-            description: "Curabitur pretium tincidunt lacus.",
+            description: "Carne, pollo, jamón y queso",
+            category:"Desayuno",
             imgSrc: empanadas
         },
         {
             title: "Olla de Carne",
-            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse.",
+            description: "Trozos de carne de res con zanahorias, chayote, yuca, papa, y maíz tierno.",
+            category:"Almuerzo",
             imgSrc: olladecarne
         },
         {
             title: "Tamales",
-            description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa.",
+            description: "Tamales de cerdo, pollo, y entre otras variaciones",
+            category:"3 Tiempos de comida",
             imgSrc: tamales
         },
         {
             title: "Chicharrones",
-            description: "Curabitur pretium tincidunt lacus.",
+            description: "Trozos de carne de cerdo fritos, crujientes por fuera y jugosos por dentro.",
+            category:"Cena",
             imgSrc: chicharrones
         }
     ];

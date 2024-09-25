@@ -1,7 +1,10 @@
 .menu-item {
     width: 12rem;
-
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.text-success{
+    font-family: 'Nerko One', cursive;
 }
 
 .menu-item:hover {
