@@ -12,6 +12,7 @@
 
 .sidebar {
     box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    height: 120vh;
     font-size: 2rem;
     color: #008000;
     font-family: 'Nerko One', cursive;

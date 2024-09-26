@@ -135,5 +135,36 @@
       "id": "fc80"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "id": "a31b",
+      "item": "Empanadas",
+      "drink": "Café: Con leche",
+      "total": 1900
+    },
+    {
+      "id": "79c4",
+      "item": "Tamales de cerdo",
+      "drink": "Gaseosa: Coca-Cola",
+      "total": 3300
+    },
+    {
+      "id": "68bb",
+      "item": "Tamales de cerdo",
+      "drink": "Natural: Limón",
+      "total": 1600
+    },
+    {
+      "id": "436c",
+      "item": "Gordon Blue",
+      "drink": "Gaseosa: Coca-Cola",
+      "total": 5200
+    },
+    {
+      "id": "e247",
+      "item": "Sopa Mariscos",
+      "drink": "Gaseosa: Coca-Cola",
+      "total": 5700
+    }
+  ]
 }

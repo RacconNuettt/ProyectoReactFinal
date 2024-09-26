@@ -8,11 +8,14 @@ import { getMenu } from '../services/GetMenu';
 import { postMenu } from '../services/PostMenu';
 import { deleteMenu } from '../services/DeleteMenu';
 import { updateMenu } from '../services/UpdateMenu';
+import { getOrders } from '../services/OrdernesMenu/GetOrder';
+import { getUsers } from '../services/GetUser';
 
 const AdminPage = () => {
-    const [Menu, setMenu] = useState('Bienvenida Reina Isabel, desde esta página podrás observar órdenes y agregar nuevos platos');
+    const [menu, setMenu] = useState('Bienvenida Reina Isabel, desde esta página podrás observar órdenes y agregar nuevos platos');
     const [foodItems, setFoodItems] = useState([]);
     const [orderItems, setOrderItems] = useState([]);
+    const [userItems, setUserItems] = useState([]);
     const [formData, setFormData] = useState({
         name: '',
         category: '',
@@ -24,6 +27,7 @@ const AdminPage = () => {
 
     useEffect(() => {
         loadMenu();
+        loadOrders(); // Load orders when component mounts
     }, []);
 
     const loadMenu = async () => {
@@ -31,14 +35,21 @@ const AdminPage = () => {
         setFoodItems(items);
     };
 
-    const OpcionMenu = (option) => {
+    const loadOrders = async () => {
+        const orders = await getOrders();
+        setOrderItems(orders);
+        const usuarios = await getUsers();
+        setUserItems(usuarios);
+    };
+
+    const optionMenu = (option) => {
         setMenu(option);
     };
 
-    const Contenido = () => {
-        switch (Menu) {
+    const content = () => {
+        switch (menu) {
             case 'Inicio':
-                window.location.href = '/Home'; 
+                window.location.href = '/Home';
                 return null;
             case 'Documentos':
                 return (
@@ -103,30 +114,33 @@ const AdminPage = () => {
                         <Table striped bordered hover>
                             <thead>
                                 <tr>
-                                    <th>Nombre</th>
-                                    <th>Hora</th>
+                                    <th>Nombre de Usuario</th>
                                     <th>Comida</th>
+                                    <th>Bebida</th>
                                     <th>Precio</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {orderItems.map((order, index) => (
-                                    <tr key={index}>
-                                        <td>{order.name}</td>
-                                        <td>{order.time}</td>
-                                        <td>{order.food}</td>
-                                        <td>{order.price}</td>
-                                    </tr>
-                                ))}
+                                {orderItems.map((order, index) => {
+                                    const userI = userItems.find(user => user.id === order.userId);
+                                    return (
+                                        <tr key={index}>
+                                            <td>{userI ? order.name : 'N/A'}</td>
+                                            <td>{order.item || 'N/A'}</td>
+                                            <td>{order.drink || 'N/A'}</td>
+                                            <td>{order.total || 'N/A'}</td>
+                                        </tr>
+                                    );
+                                })}
                             </tbody>
                         </Table>
                     </div>
                 );
             case 'Salir':
-                window.location.href = '/Login'; 
+                window.location.href = '/Login';
                 return null;
             default:
-                return <div><h2>{Menu}</h2></div>;
+                return <div><h2>{menu}</h2></div>;
         }
     };
 
@@ -150,12 +164,12 @@ const AdminPage = () => {
             description: '',
             image: ''
         });
-        loadMenu(); 
+        loadMenu();
     };
 
     const handleDelete = async (id) => {
         await deleteMenu(id);
-        loadMenu(); 
+        loadMenu();
     };
 
     const handleEdit = (item) => {
@@ -175,29 +189,29 @@ const AdminPage = () => {
                 <Col xs={2} className="sidebar bg-success text-white">
                     <ul className="nav flex-column">
                         <li className="nav-item">
-                            <Button variant="link" className="nav-link text-white d-flex align-items-center" onClick={() => OpcionMenu('Inicio')}>
+                            <Button variant="link" className="nav-link text-white d-flex align-items-center" onClick={() => optionMenu('Inicio')}>
                                 <FaHome className="icon me-2" /> Inicio
                             </Button>
                         </li>
                         <li className="nav-item">
-                            <Button variant="link" className="nav-link text-white d-flex align-items-center" onClick={() => OpcionMenu('Documentos')}>
+                            <Button variant="link" className="nav-link text-white d-flex align-items-center" onClick={() => optionMenu('Documentos')}>
                                 <FaFileAlt className="icon me-2" /> Documentos
                             </Button>
                         </li>
                         <li className="nav-item">
-                            <Button variant="link" className="nav-link text-white d-flex align-items-center" onClick={() => OpcionMenu('Órdenes')}>
+                            <Button variant="link" className="nav-link text-white d-flex align-items-center" onClick={() => optionMenu('Órdenes')}>
                                 <FaBell className="icon me-2" /> Órdenes
                             </Button>
                         </li>
                         <li className="nav-item">
-                            <Button variant="link" className="nav-link text-white d-flex align-items-center" onClick={() => OpcionMenu('Salir')}>
+                            <Button variant="link" className="nav-link text-white d-flex align-items-center" onClick={() => optionMenu('Salir')}>
                                 <FaSignOutAlt className="icon me-2" /> Salir
                             </Button>
                         </li>
                     </ul>
                 </Col>
                 <Col xs={10} className="content bg-light p-4">
-                    {Contenido()}
+                    {content()}
                 </Col>
             </Row>
         </Container>

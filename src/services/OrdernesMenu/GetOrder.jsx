@@ -12,4 +12,4 @@ const getOrders = async () => {
     }
 };
 
-export default getOrders;
+export { getOrders }; 
