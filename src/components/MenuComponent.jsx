@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Carousel, Button, Card } from 'react-bootstrap';
 import '../styles/MenuComponent.css';
 import { getMenu } from '../services/GetMenu'; 
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const MenuComponent = () => {
     const [menuData, setMenuData] = useState({
@@ -121,7 +121,7 @@ const MenuComponent = () => {
             <br />  
 
             <div className='menu-section'>
-                <h2><Link to={'/Order'} style={{textDecoration:"none"}}>Tambien puedes personalizar tu pedido</Link></h2>
+                <h2><Link to={'/Order'} style={{textDecoration:"none"}}>También puedes personalizar tu pedido</Link></h2>
             </div>
 
             <br />

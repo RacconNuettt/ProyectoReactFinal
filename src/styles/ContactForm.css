@@ -78,3 +78,60 @@
     margin-bottom: 20px;
     border-radius: 5px;
 }
+
+@media (max-width: 768px) {
+    .contact-form-container {
+        padding: 20px;
+    }
+
+    .contact-title {
+        font-size: 24px;
+    }
+
+    .form-label {
+        font-size: 16px;
+    }
+
+    .form-input {
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        font-size: 14px;
+    }
+
+    .terms-link {
+        font-size: 12px;
+    }
+
+    .alert-danger {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-title {
+        font-size: 20px;
+    }
+
+    .form-label {
+        font-size: 14px;
+    }
+
+    .form-input {
+        font-size: 12px;
+    }
+
+    .submit-btn {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .terms-link {
+        font-size: 10px;
+    }
+
+    .alert-danger {
+        font-size: 12px;
+    }
+}

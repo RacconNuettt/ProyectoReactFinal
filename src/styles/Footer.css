@@ -44,3 +44,43 @@
 #address {
     color: #FF5722;
 }
+
+@media (max-width: 768px) {
+    .footer {
+        font-size: 1.2rem; 
+    }
+
+    .footer-icon {
+        font-size: 20px;
+    }
+
+    .footer-icon-text {
+        font-size: 0.8rem; 
+    }
+
+    .footer-icon-col {
+        margin-bottom: 15px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        font-size: 1rem; 
+    }
+
+    .footer-icon {
+        font-size: 18px; 
+    }
+
+    .footer-icon-text {
+        font-size: 0.7rem; 
+    }
+
+    h5 {
+        font-size: 1.2rem; 
+    }
+
+    p {
+        font-size: 0.9rem; 
+    }
+}
